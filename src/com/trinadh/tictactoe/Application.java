@@ -26,8 +26,18 @@ public class Application {
 				System.out.println("Enter X Turn");
 				r = input.nextInt();
 				c = input.nextInt();
+				if( r >= 3 || c >= 3) {
+					System.out.println("please enter the correct index : 0,1,2");
+					r = input.nextInt();
+					c = input.nextInt();
+				}
+				
 				
 				while(board[r][c] == 'x' || board[r][c] == 'o') {
+					if( r >= 3 || c >= 3) {
+						System.out.println("please enter the correct index : 0,1,2");
+					}
+					
 					System.out.println( "this position already exists . please select new position");
 					r = input.nextInt();
 					c = input.nextInt();
@@ -52,7 +62,7 @@ public class Application {
 				break;
 			}
 			
-			if(i == 9) {
+			if(i == 8) {
 				System.out.println("Game Tied");
 			}
 		}
@@ -75,6 +85,7 @@ public class Application {
 		int count = 0;
 		//checking for each row 
 		for(int i = 0; i < 3; i++) {
+			count = 0;
 			for(int j = 0; j < 3; j++) {
 				if(board[i][j] == 'x') {
 					count++;
@@ -93,6 +104,7 @@ public class Application {
 		//checking for each column
 		count = 0;
 		for(int i = 0; i < 3; i++) {
+			count = 0;
 			for(int j = 0; j < 3; j++) {
 				if(board[j][i] == 'x') {
 					count++;
@@ -107,7 +119,7 @@ public class Application {
 			}
 		}
 		
-		//checking for left diagonal
+		//checking for left diagonal3 0
 		 count = 0;
 		for(int i = 0; i < 3; i++) {
 			if(board[i][i] == 'x') {
