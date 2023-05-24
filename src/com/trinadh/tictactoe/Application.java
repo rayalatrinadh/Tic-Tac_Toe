@@ -49,6 +49,10 @@ public class Application {
 				c = input.nextInt();
 				
 				while(board[r][c] == 'x' || board[r][c] == 'o') {
+					if( r >= 3 || c >= 3) {
+						System.out.println("please enter the correct index : 0,1,2");
+					}
+					
 					System.out.println( "this position already exists . please select new position");
 					r = input.nextInt();
 					c = input.nextInt();
